@@ -7,8 +7,19 @@ php:
 services:
     - redis-server
 
+cache:
+    directories:
+        - node_modules
+        - vendor
+
+before_install:
+    - nvm install 8
+    - npm install -g yarn
+
 install:
     - composer install --no-interaction --prefer-dist
+    - yarn
+    - yarn dev
 
 script:
     - php vendor/bin/phpunit
