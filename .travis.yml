@@ -1,3 +1,5 @@
+sudo: required
+
 language: php
 
 php:
@@ -6,6 +8,9 @@ php:
 
 services:
     - redis-server
+
+addons:
+    chrome: stable
 
 cache:
     directories:
@@ -17,11 +22,14 @@ before_install:
     - npm install -g yarn
 
 install:
-    - composer install --no-interaction --prefer-dist
     - cp .env.example .env
+    - composer install --no-interaction --no-suggest --prefer-dist
     - php artisan key:generate
     - yarn
     - yarn dev
 
 script:
     - php vendor/bin/phpunit
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+    - php artisan serve &
+    - php artisan dusk
