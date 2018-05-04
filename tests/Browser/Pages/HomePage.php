@@ -11,7 +11,7 @@ class HomePage extends Page
      */
     public function url()
     {
-        return '/';
+        return route('home');
     }
 
     /**
@@ -21,7 +21,7 @@ class HomePage extends Page
      */
     public function assert(Browser $browser)
     {
-        //
+        $browser->assertRouteIs('home');
     }
 
     /**
