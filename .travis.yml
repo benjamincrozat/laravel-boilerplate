@@ -18,6 +18,7 @@ before_install:
 
 install:
     - composer install --no-interaction --prefer-dist
+    - php artisan key:generate
     - yarn
     - yarn dev
 
