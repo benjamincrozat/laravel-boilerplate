@@ -28,7 +28,7 @@ I also removed the `Test` namespace to simplifify the code in that part. I still
 
 ### Front end
 
-I removed jQuery and Bootstrap stuff and kept [Vue.js](https://vuejs.org/), [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). My [Mix configuration](/webpack.mix.js) can strip all unused CSS when compiling for production. You can end up with ~10 Ko CSS!
+I removed jQuery/Bootstrap stuff, kept [Vue.js](https://vuejs.org/), [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). My [Mix configuration](/webpack.mix.js) can strip all unused CSS when compiling for production. You can end up with ~10 Ko CSS!
 
 ## Usage
 
@@ -36,7 +36,7 @@ I removed jQuery and Bootstrap stuff and kept [Vue.js](https://vuejs.org/), [Axi
 composer create-project benjamincrozat/laravel-boilerplate example
 ```
 
-Then, it's just like any fresh laravel project.
+Then, it's just like any fresh Laravel project.
 
 ## License
 
