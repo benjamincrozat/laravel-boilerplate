@@ -7,6 +7,37 @@
 
 Opinionated way to start a new Laravel project.
 
+## Why?
+
+I just got tired of repeating the same things over and over!
+
+## What's included
+
+In addition to code clean up, I added/updated and removed some dependencies, both in the front and the back end.
+
+### Back end
+
+- predis/predis, which is used by Laravel if the native extension isn't present;
+- barryvdh/laravel-ide-helper, to help you out digging the source code and enjoy a better autocompletion;
+- codedungeon/phpunit-result-printer, for a prettier PHPUnit display in your console;
+- itsgoingd/clockwork, to help you debug and optimize your application;
+- laravel/homestead, if you don't want to use Valet or Docker;
+- shipping-docker/vessel, if you don't want to use Valet or Vagrant.
+
+I also removed the `Test` namespace to simplifify the code in that part. I still can't see why it's useful.
+
+### Front end
+
+I removed jQuery and Bootstrap stuff and kept [Vue.js](https://vuejs.org/), [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). My [Mix configuration](/webpack.mix.js) can strip all unused CSS when compiling for production. You can end up with ~10 Ko CSS!
+
+## Usage
+
+```bash
+composer create-project benjamincrozat/laravel-boilerplate example
+```
+
+Then, it's just like any fresh laravel project.
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
