@@ -13,6 +13,7 @@
 /Homestead.yaml
 /node_modules
 /npm-debug.log
+/phpunit.dusk.xml
 /phpunit.xml
 /public/css
 /public/hot
