@@ -7,6 +7,12 @@
 
 Opinionated way to start a new Laravel project.
 
+## Requirements
+
+- Nginx
+- PHP 7.2+ (Argon2 hashing algorithm)
+- Redis
+
 ## Why?
 
 I just got tired of repeating the same things over and over!
