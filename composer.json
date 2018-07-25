@@ -12,7 +12,6 @@
         "predis/predis": "^1.0"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.4",
         "codedungeon/phpunit-result-printer": "0.*",
         "doctrine/dbal": "^2.7",
         "filp/whoops": "^2.0",
@@ -55,10 +54,7 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:models"
+            "@php artisan package:discover"
         ]
     },
     "config": {

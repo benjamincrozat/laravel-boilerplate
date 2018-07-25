@@ -16,7 +16,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name'           => $faker->name,
         'email'          => $faker->unique()->safeEmail,
-        'password'       => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'password'       => '$argon2i$v=19$m=1024,t=2,p=2$Z0dHaS45aTZ2eTVrUGNmVA$4cnLj0VkJMadhl5AcB1XxPxInGlvzJDKRal4Wqw6Ypk', // secret
         'remember_token' => str_random(10),
     ];
 });
