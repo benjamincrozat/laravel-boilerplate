@@ -9,7 +9,7 @@ class ExampleDuskTest extends DuskTestCase
      *
      * @throws Throwable
      */
-    public function testBasicExample()
+    function testBasicExample()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new HomePage());

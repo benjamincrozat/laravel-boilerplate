@@ -9,7 +9,7 @@ class HomePage extends Page
      *
      * @return string
      */
-    public function url()
+    function url()
     {
         return route('home');
     }
@@ -19,7 +19,7 @@ class HomePage extends Page
      *
      * @param Browser $browser
      */
-    public function assert(Browser $browser)
+    function assert(Browser $browser)
     {
         $browser->assertRouteIs('home');
     }
@@ -29,7 +29,7 @@ class HomePage extends Page
      *
      * @return array
      */
-    public function elements()
+    function elements()
     {
         return [
             //
