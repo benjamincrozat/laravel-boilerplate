@@ -29,7 +29,7 @@ I also removed the `Test` namespace to simplifify the code in that part. I still
 
 ### Front end
 
-I removed jQuery/Bootstrap stuff, kept [Vue.js](https://vuejs.org/), [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). My [Mix configuration](/webpack.mix.js) can strip all unused CSS when compiling for production. You can end up with ~10 Ko CSS!
+I removed jQuery/Bootstrap stuff, kept [Vue.js](https://vuejs.org/), [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). The [Mix configuration](/webpack.mix.js) can strip all unused CSS when compiling for production. You can end up with pretty much 10Kb CSS!
 
 ## Usage
 
