@@ -22,7 +22,7 @@ before_install:
 
 install:
     - cp .env.example .env
-    - composer install --n --no-suggest
+    - composer install -n --no-suggest
     - php artisan key:generate
     - yarn
     - yarn dev
