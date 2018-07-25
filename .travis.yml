@@ -1,3 +1,4 @@
+
 sudo: required
 
 language: php
@@ -18,12 +19,12 @@ cache:
         - vendor
 
 before_install:
-    - nvm install 8
+    - nvm install node
     - npm install -g yarn
 
 install:
     - cp .env.example .env
-    - composer install --no-interaction --no-suggest --prefer-dist
+    - composer install --n --no-suggest
     - php artisan key:generate
     - yarn
     - yarn dev
