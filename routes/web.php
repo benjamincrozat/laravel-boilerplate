@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/', 'HomeController')->name('home');
+Route::view('/', 'home')->name('home');

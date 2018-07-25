@@ -1,0 +1,2 @@
+@component('app')
+@endcomponent

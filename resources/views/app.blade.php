@@ -4,20 +4,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta property="og:site_name" content="{{ config('app.name') }}">
-        <meta property="og:type" content="website">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@benjamincrozat">
-        <meta name="twitter:site" content="@benjamincrozat">
-        <meta name="description" content="{{ $description or '' }}">
-        <meta property="og:title" content="{{ $title_tag or config('app.name') }}">
-        <meta property="og:description" content="{{ $description or '' }}">
-        <meta property="og:url" content="{{ url()->current() }}">
-        <meta property="og:image" content="{{ $image or '' }}">
-        <meta name="twitter:title" content="{{ $title_tag or config('app.name') }}">
-        <meta name="twitter:description" content="{{ $description or '' }}">
-        <meta name="twitter:image" content="{{ $image or '' }}">
         {{ $meta_tags or '' }}
 
         <title>
