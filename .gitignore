@@ -1,6 +1,7 @@
 .DS_Store
 /.env
 /.env.bak.vessel
+/.env.dusk
 /.idea
 /.phpintel
 /.phpstorm.meta.php
