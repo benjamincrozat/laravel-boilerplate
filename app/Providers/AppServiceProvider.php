@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use Laravel\Horizon\Horizon;
 use Illuminate\Support\Carbon;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
@@ -24,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
         Relation::morphMap([
             \App\User::class,
         ]);
+
+        // https://laravel.com/docs/5.6/horizon#installation
+        Horizon::auth(function () {
+            return Auth::check();
+        });
     }
 
     /**
