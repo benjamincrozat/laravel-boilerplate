@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      */
-    public function boot()
+    function boot()
     {
         //
 
@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      */
-    public function map()
+    function map()
     {
         $this->mapApiRoutes();
 

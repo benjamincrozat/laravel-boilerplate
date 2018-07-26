@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
+    function boot()
     {
         // https://carbon.nesbot.com/docs/#api-localization
         Carbon::setLocale(config('app.locale'));
@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    public function register()
+    function register()
     {
         if (! $this->app->environment('production')) {
             $this->app->register(\Clockwork\Support\Laravel\ClockworkServiceProvider::class);
