@@ -8,7 +8,8 @@ class ExampleDuskTest extends DuskTestCase
     function it_works()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new HomePage());
+            $browser->visit(new HomePage())
+                ->assertSee('Welcome Home!');
         });
     }
 }

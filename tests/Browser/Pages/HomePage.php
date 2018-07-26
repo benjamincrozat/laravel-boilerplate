@@ -21,7 +21,7 @@ class HomePage extends Page
      */
     function assert(Browser $browser)
     {
-        $browser->assertRouteIs('home');
+        $browser->assertPathIs('/');
     }
 
     /**
