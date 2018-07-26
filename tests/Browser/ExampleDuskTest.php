@@ -4,12 +4,8 @@ use Laravel\Dusk\Browser;
 
 class ExampleDuskTest extends DuskTestCase
 {
-    /**
-     * A basic browser test example.
-     *
-     * @throws Throwable
-     */
-    function testBasicExample()
+    /** @test */
+    function it_works()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new HomePage());
