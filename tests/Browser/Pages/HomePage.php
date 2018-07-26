@@ -21,6 +21,8 @@ class HomePage extends Page
      */
     function assert(Browser $browser)
     {
+        parent::assert($browser);
+
         $browser->assertPathIs('/');
     }
 
