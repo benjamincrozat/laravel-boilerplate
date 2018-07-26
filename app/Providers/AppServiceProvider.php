@@ -14,14 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // https://carbon.nesbot.com/docs/#api-localization
         Carbon::setLocale(config('app.locale'));
 
-        // Use a clean template for paginations instead of the Bootstrap 4 version.
+        // https://laravel.com/docs/5.6/pagination#customizing-the-pagination-view
         Paginator::defaultSimpleView('pagination::simple-default');
 
-        // Polymorphic relationships shouldn't depend on our app's structure.
-        // Now, instead of seeing `App\User` in the database,
-        // we'll see a proper identifier like `users`.
+        // Custom Polymorphic Types: https://laravel.com/docs/5.6/eloquent-relationships#polymorphic-relations
         Relation::morphMap([
             \App\User::class,
         ]);
