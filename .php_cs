@@ -12,6 +12,7 @@ return PhpCsFixer\Config::create()
         'combine_consecutive_unsets'        => true,
         'compact_nullable_typehint'         => true,
         'concat_space'                      => ['spacing' => 'one'],
+        'new_with_braces'                   => false,
         'no_empty_comment'                  => false,
         'no_superfluous_elseif'             => true,
         'not_operator_with_successor_space' => true,
