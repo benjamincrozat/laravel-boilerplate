@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
         // https://carbon.nesbot.com/docs/#api-localization
         Carbon::setLocale(config('app.locale'));
 
+        // https://laravel.com/docs/5.6/horizon#installation
+        Horizon::auth(function () {
+            return Auth::check();
+        });
+
         // https://laravel.com/docs/5.6/pagination#customizing-the-pagination-view
         Paginator::defaultSimpleView('pagination::simple-default');
 
@@ -26,11 +31,6 @@ class AppServiceProvider extends ServiceProvider
         Relation::morphMap([
             \App\User::class,
         ]);
-
-        // https://laravel.com/docs/5.6/horizon#installation
-        Horizon::auth(function () {
-            return Auth::check();
-        });
     }
 
     /**
