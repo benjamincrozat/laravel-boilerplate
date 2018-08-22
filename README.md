@@ -9,11 +9,11 @@
 
 ## Why?
 
-I just got tired of repeating the same things over and over. I made this repository open source so people can stop by and provide feedback or learn things.
+I just got tired of repeating the same things over and over. I made this repository public, because why not?
 
 ## What's included
 
-In addition to code clean up, I added/updated and removed some dependencies, both in the front and the back end.
+In addition to code clean up, I added or removed dependencies both in the front and the back end.
 
 ### Back end
 
@@ -23,8 +23,6 @@ In addition to code clean up, I added/updated and removed some dependencies, bot
 - *itsgoingd/clockwork*, to help you debug and optimize your application;
 - *laravel/dusk*, for easy browser testing;
 - *laravel/homestead*, if you don't want to use Valet or Docker;
-- *laravel/scout*, for easy full-text search on your models;
-- *laravel/socialite*, for easy one click authentication;
 - *nothingworks/blade-svg*, to make it easy working with SVGs;
 - *predis/predis*, which is used by Laravel if the native extension isn't present;
 - *shipping-docker/vessel*, if you don't want to use Valet or Vagrant.
