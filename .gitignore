@@ -1,4 +1,5 @@
 .DS_Store
+.phpunit.result.cache
 /.env
 /.env.bak.vessel
 /.env.dusk

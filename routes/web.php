@@ -2,4 +2,4 @@
 
 Route::view('/', 'home')->name('home');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
