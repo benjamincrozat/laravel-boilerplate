@@ -17,7 +17,6 @@ In addition to code clean up, I added or removed dependencies both in the front 
 
 ### Back end
 
-- *algolia/algoliasearch-client-php*, to make Scout use Algolia instead of MySQL;
 - *benjamincrozat/laravel-blade-sugar*, too add handy new Blade directives;
 - *codedungeon/phpunit-result-printer*, for a prettier PHPUnit display in your console;
 - *itsgoingd/clockwork*, to help you debug and optimize your application;

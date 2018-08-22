@@ -6,7 +6,6 @@
     "type": "project",
     "require": {
         "php": "^7.2",
-        "algolia/algoliasearch-client-php": "^1.27",
         "benjamincrozat/laravel-blade-sugar": "^4.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
