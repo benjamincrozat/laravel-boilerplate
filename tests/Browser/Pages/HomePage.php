@@ -1,7 +1,5 @@
 <?php
 
-use Laravel\Dusk\Browser;
-
 class HomePage extends Page
 {
     /**
@@ -12,18 +10,6 @@ class HomePage extends Page
     function url()
     {
         return route('home');
-    }
-
-    /**
-     * Assert that the browser is on the page.
-     *
-     * @param Browser $browser
-     */
-    function assert(Browser $browser)
-    {
-        parent::assert($browser);
-
-        $browser->assertPathIs('/');
     }
 
     /**
