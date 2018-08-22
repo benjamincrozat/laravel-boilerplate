@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Laravel\Horizon\Horizon;
-use Illuminate\Support\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -16,9 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     function boot()
     {
-        // https://carbon.nesbot.com/docs/#api-localization
-        Carbon::setLocale(config('app.locale'));
-
         // https://laravel.com/docs/5.6/horizon#installation
         Horizon::auth(function () {
             return Auth::check();
