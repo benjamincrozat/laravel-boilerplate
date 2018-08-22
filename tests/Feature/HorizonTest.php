@@ -14,8 +14,6 @@ class HorizonTest extends TestCase
     /** @test */
     function users_can_access_horizon()
     {
-        $this->withoutExceptionHandling();
-
         $this->actingAs(factory(User::class)->create())
             ->getJson('/horizon')
             ->assertStatus(200);
