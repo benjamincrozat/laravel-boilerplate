@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class LanguageServiceProvider extends ServiceProvider
 {
     /**
-     * Associate a locale to a Linux locale name for PHP's `setlocale` function.
+     * Associate a locale to a Linux locale for PHP's `setlocale` function.
      *
      * @var array
      */
