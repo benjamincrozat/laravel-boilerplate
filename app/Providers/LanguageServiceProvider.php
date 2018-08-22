@@ -12,7 +12,7 @@ class LanguageServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $systemLocales = [
+    protected $system = [
         'en' => [
             'en_US.UTF-8',
             'en_US.utf8',
@@ -27,7 +27,7 @@ class LanguageServiceProvider extends ServiceProvider
     public function boot()
     {
         $locale = $this->app->getLocale();
-        $system = $this->systemLocales[$locale];
+        $system = $this->system[$locale];
 
         if (! setlocale(LC_ALL, ...$system)) {
             throw new \Exception(implode(', ', $system) . 'locales are not installed on your machine.');
