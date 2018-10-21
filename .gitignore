@@ -17,6 +17,7 @@
 /public/storage
 /public/vendor
 /storage/*.key
+/storage/clockwork
 /storage/medialibrary
 /vendor
 composer.lock
@@ -25,3 +26,4 @@ Homestead.yaml
 phpunit.dusk.xml
 phpunit.xml
 Thumbs.db
+yarn.lock
