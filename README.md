@@ -19,15 +19,15 @@ In addition to code clean up, I added or removed dependencies both in the front 
 
 ### Back end
 
-- *benjamincrozat/laravel-blade-sugar*, too add handy new Blade directives;
-- *codedungeon/phpunit-result-printer*, for a prettier PHPUnit display in your console;
-- *laravel/dusk*, for easy browser testing;
-- *laravel/homestead*, if you don't want to use Valet or Docker;
-- *laravel/nova*, to quickly set up a powerful and beautiful admin panel;
-- *laravel/telescope*, to help you debug and optimize your application;
-- *nothingworks/blade-svg*, to make it easy working with SVGs;
-- *predis/predis*, which is used by Laravel if the native extension isn't present;
-- *shipping-docker/vessel*, if you don't want to use Valet or Vagrant.
+- [benjamincrozat/laravel-blade-sugar](https://packagist.org/benjamincrozat/laravel-blade-sugar), too add handy new Blade directives;
+- [codedungeon/phpunit-result-printer](https://packagist.org/codedungeon/phpunit-result-printer), for a prettier PHPUnit display in your console;
+- [laravel/dusk](https://packagist.org/laravel/dusk), for easy browser testing;
+- [laravel/homestead](https://packagist.org/laravel/homestead), if you don't want to use Valet or Docker;
+- [laravel/nova](https://packagist.org/laravel/nova), to quickly set up a powerful and beautiful admin panel;
+- [laravel/telescope](https://packagist.org/laravel/telescope), to help you debug and optimize your application;
+- [nothingworks/blade-svg](https://packagist.org/nothingworks/blade-svg), to make it easy working with SVGs;
+- [predis/predis](https://packagist.org/predis/predis), which is used by Laravel if the native extension isn't present;
+- [shipping-docker/vessel](https://packagist.org/shipping-docker/vessel), if you don't want to use Valet or Vagrant.
 
 ### Front end
 
