@@ -4,6 +4,13 @@ use App\User;
 
 class NovaTest extends TestCase
 {
+    function setUp()
+    {
+        parent::setUp();
+
+        $this->markTestSkipped();
+    }
+
     /** @test */
     function guests_cannot_access_nova()
     {
