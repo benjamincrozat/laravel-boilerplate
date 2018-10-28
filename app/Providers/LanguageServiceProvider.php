@@ -9,8 +9,6 @@ class LanguageServiceProvider extends ServiceProvider
 {
     /**
      * Associate a locale to a Linux locale for PHP's `setlocale` function.
-     *
-     * @var array
      */
     protected $system = [
         'en' => [
@@ -24,7 +22,7 @@ class LanguageServiceProvider extends ServiceProvider
     /**
      * Bootstrap services.
      */
-    public function boot()
+    function boot()
     {
         $locale = $this->app->getLocale();
         $system = $this->system[$locale];

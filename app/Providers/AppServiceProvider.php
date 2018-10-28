@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Laravel\Horizon\Horizon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,8 @@ class AppServiceProvider extends ServiceProvider
     function boot()
     {
         // https://laravel.com/docs/5.6/horizon#installation
-        Horizon::auth(function () {
-            return Auth::check();
+        Horizon::auth(function (Request $request) {
+            return $request->user() && 1 === $request->user()->id;
         });
 
         // https://laravel.com/docs/5.6/pagination#customizing-the-pagination-view
@@ -35,7 +36,6 @@ class AppServiceProvider extends ServiceProvider
     function register()
     {
         if (! $this->app->environment('production')) {
-            $this->app->register(\Clockwork\Support\Laravel\ClockworkServiceProvider::class);
             $this->app->register(\Laravel\Dusk\DuskServiceProvider::class);
         }
     }

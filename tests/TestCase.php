@@ -13,6 +13,6 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
     {
         parent::setUp();
 
-        Cache::flush();
+        cache()->flush();
     }
 }

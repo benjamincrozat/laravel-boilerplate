@@ -2,13 +2,13 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersDatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
      */
     function run()
     {
-        $this->call(UsersTableSeeder::class);
+        factory(User::class, 50)->create();
     }
 }

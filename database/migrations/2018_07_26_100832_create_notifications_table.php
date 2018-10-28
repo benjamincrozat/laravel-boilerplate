@@ -9,7 +9,7 @@ class CreateNotificationsTable extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    function up()
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->uuid('id')->primary();
@@ -24,7 +24,7 @@ class CreateNotificationsTable extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    function down()
     {
         Schema::dropIfExists('notifications');
     }

@@ -2,20 +2,20 @@
 
 use App\User;
 
-class HorizonTest extends TestCase
+class TelescopeTest extends TestCase
 {
     /** @test */
-    function guests_cannot_access_horizon()
+    function guests_cannot_access_telescope()
     {
-        $this->getJson('/horizon')
+        $this->getJson('/telescope')
             ->assertStatus(403);
     }
 
     /** @test */
-    function first_user_can_access_horizon()
+    function first_user_can_access_telescope()
     {
         $this->actingAs(factory(User::class)->create())
-            ->getJson('/horizon')
+            ->getJson('/telescope')
             ->assertStatus(200);
     }
 }

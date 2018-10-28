@@ -13,7 +13,7 @@ abstract class DuskTestCase extends \Laravel\Dusk\TestCase
      *
      * @beforeClass
      */
-    public static function prepare()
+    static function prepare()
     {
         static::startChromeDriver();
     }
