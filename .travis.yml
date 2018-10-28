@@ -14,13 +14,16 @@ cache:
 before_install:
     - nvm install node
     - npm install -g yarn
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 install:
     - cp .env.example .env
-    - composer install -n --no-suggest
+    - composer install -n --prefer-dist
     - php artisan key:generate
     - yarn
     - yarn dev
 
 script:
     - php vendor/bin/phpunit
+    - php artisan serve &
+    - php artisan dusk
