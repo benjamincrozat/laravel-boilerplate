@@ -11,8 +11,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -21,30 +19,24 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the Nova routes.
-     *
-     * @return void
      */
     protected function routes()
     {
         Nova::routes()
-                ->withAuthenticationRoutes()
-                ->withPasswordResetRoutes()
-                ->register();
+            ->withAuthenticationRoutes()
+            ->withPasswordResetRoutes()
+            ->register();
     }
 
     /**
      * Register the Nova gate.
      *
      * This gate determines who can access Nova in non-local environments.
-     *
-     * @return void
      */
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            return 1 === $user->id;
         });
     }
 
@@ -72,8 +64,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
