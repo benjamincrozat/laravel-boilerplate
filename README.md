@@ -5,6 +5,8 @@
 
 # Laravel Boilerplate
 
+![](https://user-images.githubusercontent.com/3613731/47615584-030c3b80-dab1-11e8-9912-929a3aee618f.png)
+
 **Opinionated way** to start a new Laravel project.
 
 ## Why?
