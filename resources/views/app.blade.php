@@ -8,6 +8,12 @@
 
         @title($title)
 
+        <style>
+            a {
+                transition: color .2s ease-out;
+            }
+        </style>
+
         <link rel="stylesheet" href="@mix('/css/app.css')">
 
         @if ($id = config('services.ga.tracking_id') && app()->environment('production') && auth()->guest())
@@ -15,7 +21,7 @@
             <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ $id }}')</script>
         @endif
     </head>
-    <body>
+    <body class="bg-orange-lightest">
         <div id="app">
             {{ $slot }}
         </div>

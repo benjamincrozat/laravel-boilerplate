@@ -9,6 +9,7 @@
 .vagrant
 .vscode
 /node_modules
+/nova
 /public/css
 /public/hot
 /public/js
