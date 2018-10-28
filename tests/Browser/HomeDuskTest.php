@@ -9,7 +9,7 @@ class ExampleDuskTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new HomePage())
-                ->assertSee('Welcome Home!');
+                ->assertSee('Hello, World!');
         });
     }
 }
