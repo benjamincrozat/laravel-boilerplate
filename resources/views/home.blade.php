@@ -17,12 +17,14 @@
             <h1 class="font-thin mt-8">Hello, World!</h1>
 
             <nav class="mt-4">
-                <ul class="flex list-reset">
-                    <li class="mr-8"><a href="@url('/horizon')" class="no-underline text-red hover:text-red-light">Horizon</a></li>
-                    <li class="mr-8"><a href="@url('/nova')" class="no-underline text-red hover:text-red-light">Nova</a></li>
-                    <li><a href="@url('/telescope')" class="no-underline text-red hover:text-red-light">Telescope</a></li>
+                <ul class="flex justify-center list-reset">
+                    <li class="mr-8"><a href="@url('/horizon')" class="no-underline" style="color: #fb503b">Horizon</a></li>
+                    <li class="mr-8"><a href="@url('/nova')" class="no-underline" style="color: #fb503b">Nova</a></li>
+                    <li><a href="@url('/telescope')" class="no-underline" style="color: #fb503b">Telescope</a></li>
                 </ul>
             </nav>
+
+            <a href="https://github.com/benjamincrozat/laravel-boilerplate" target="_blank" class="font-bold inline-block mt-8 no-underline px-8 py-4 rounded text-white" style="background-color: #fb503b">Laravel Boilerplate on GitHub</a>
         </div>
     </div>
 @endcomponent

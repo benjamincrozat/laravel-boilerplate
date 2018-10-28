@@ -8,12 +8,6 @@
 
         @title($title)
 
-        <style>
-            a {
-                transition: color .2s ease-out;
-            }
-        </style>
-
         <link rel="stylesheet" href="@mix('/css/app.css')">
 
         @if ($id = config('services.ga.tracking_id') && app()->environment('production') && auth()->guest())
