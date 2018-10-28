@@ -1,10 +1,16 @@
 language: php
 
 php:
+    - 7.1
     - 7.2
 
 services:
     - redis-server
+
+env:
+    global:
+        - secure: "Vee6yf6B9g1yf/arQr/2eNvtflhvsAygJgYz1A1TZmQ7AjjI+ywX5Ux6c8aTXWwfS1EvOUlO4iPora8PyPvPI1U7wFZGj9ldYRKcJ/giejxTOXkVJksHjllLtlavZr0+rkdttqNJrIslrOvFiK1K7AtjAtBGKn0DkeruR7OdkRfShP8uWTTPHGEauuJSMMqeGzKEZAnUFS2rV2Wmq48izwGzTeaiVY4P79d+MLzGs4LU69UGz9FGWa9DQpKZat9oqDVOZ2C3TV5HsDWse3O1liknwlkvZi9hT9n56YUuc47PLvSYE5LOBk4lnr2ecpnl7+r9mVjSPrDbnLm+lAT50NwhUxI1qA4QwnP97lHuR+hOu7uG8lJA1JXd1Llu7OlKCfxwpTHPsUTUAP36kpGaMS3zjKtUAjuj9SEkQzUcnaqM6QZVC3ViUTos1fK1+tdIbs2U+3raU753Lp7bOq6ugBYCm2gKNkaba6U9cBdaE3Lvr1Ay4ZHlFqKOvKwSdOp29qFvUcS4S2aFcKYJDv13KG6qm3xGvPd6JnXltS8sg//pS5aDbNVIcLo6lVeg4NulhHoUNPN3/bKPLRfg8NTkmjy/MbI/KJm9nKkA8+en+dBzqWnemNuh2jFqyPKAOlY2zlCSnzUIb7jnqtworWHzIO5uMbcwOvIT414ZuNjfKrs="
+        - secure: "zHHnKJtTV9nvHnCaqEgW/F9AA8RFLgF41qlx6YiRVczLtT40vw5zVPuZNrKTkFKm9NS65aEwyN04od1LE0zAFaI3YR5+gs6Cad8p5CfULPM1NY9iDtWgV+223JZcfnGKzA6bUiSgTCeAXVvMGQF+JTnPqPhtyM4Y5hT9SpEKJwRNZ2x7Zocr+psQp5FfLvhjYlZFnnXaZaif1/L4lr+iI8Y3dIApiamD+Lv7CL+KBu8+qcqAfdmDbUDVxLJTQYo7Dc6hN2wauPFTY1zYkYREwQ+m2xMGo8AXTpepmrQiVD8wrsfKmq830I6uEbRFqdGjk6BatecLCBrfuNxgn8OUvd/n2YO4H6SEqTYPssUfr8n8DIcF0kwPfNe1cxUWMG3Rkfx2GX2AIOpsuIiXBbo3bi6bbgnrJq9qvI/GRl6VvKuEW2MdXSswS5SA9gHMZmOUFdikQ4nhbCburFnb7C1KtRhkUyjVauF5ZA8syw8Talslt9TgxTDamS7YUbhGtRqowRIaEgvWLPLam6sBTUsroLowCErzBcyclisvhSysawzmlaPEwzfb/MCmonU+4rnEzzHz4z8keN7CCV5ueoRLNwEFslNXSg7ii5I9HC2WvkqGC75+XCxInPEJYFJOlPKawxQZ4Q0Llknb+Rpx3daRAT21BCr4DLfQ/eFD+ym32JI="
 
 cache:
     directories:
@@ -12,16 +18,16 @@ cache:
         - vendor
 
 before_install:
-    - nvm install node
-    - npm install -g yarn
+    - nvm install node && npm install -g yarn
     - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 install:
     - cp .env.example .env
-    - composer install -n --prefer-dist
+    - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
+    - travis_retry composer self-update
+    - travis_retry composer install -n --prefer-dist
     - php artisan key:generate
-    - yarn
-    - yarn dev
+    - yarn && yarn dev
 
 script:
     - php vendor/bin/phpunit
