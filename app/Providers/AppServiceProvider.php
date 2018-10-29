@@ -16,12 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     function boot()
     {
-        // https://laravel.com/docs/5.6/horizon#installation
+        // https://laravel.com/docs/horizon#installation
         Horizon::auth(function (Request $request) {
             return $request->user() && 1 === $request->user()->id;
         });
 
-        // https://laravel.com/docs/5.6/pagination#customizing-the-pagination-view
+        // https://laravel.com/docs/pagination#customizing-the-pagination-view
         Paginator::defaultSimpleView('pagination::simple-default');
 
         // Custom Polymorphic Types: https://laravel.com/docs/5.6/eloquent-relationships#polymorphic-relations
