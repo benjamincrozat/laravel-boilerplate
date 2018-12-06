@@ -9,11 +9,6 @@
         @title($title)
 
         <link rel="stylesheet" href="@mix('/css/app.css')">
-
-        @if ($id = config('services.ga.tracking_id') && app()->environment('production') && auth()->guest())
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $id }}"></script>
-            <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ $id }}')</script>
-        @endif
     </head>
     <body class="bg-orange-lightest">
         <div id="app">

@@ -13,10 +13,6 @@ return [
     |
     */
 
-    'ga' => [
-        'tracking_id' => env('GA_TRACKING_ID'),
-    ],
-
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
