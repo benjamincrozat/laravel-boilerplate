@@ -1,7 +1,6 @@
 language: php
 
 php:
-    - 7.1
     - 7.2
     - 7.3
     - nightly
@@ -32,7 +31,7 @@ install:
     - cp .env.example .env
     - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
     - travis_retry composer self-update
-    - travis_retry composer install -n --prefer-dist
+    - travis_retry composer install -n --no-suggest --prefer-dist
     - php artisan key:generate
     - yarn
     - yarn dev
