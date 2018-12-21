@@ -28,7 +28,7 @@ class LanguageServiceProvider extends ServiceProvider
         $system = $this->system[$locale];
 
         if (! setlocale(LC_ALL, ...$system)) {
-            throw new \Exception(implode(', ', $system) . 'locales are not installed on your machine.');
+            throw new \Exception("Locale \"$locale\" is not installed on your machine.");
         }
 
         // https://carbon.nesbot.com/docs/#api-localization
