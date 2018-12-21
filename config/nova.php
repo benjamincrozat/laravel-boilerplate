@@ -6,7 +6,6 @@ use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Nova App Name
@@ -77,5 +76,4 @@ return [
         BootTools::class,
         Authorize::class,
     ],
-
 ];
