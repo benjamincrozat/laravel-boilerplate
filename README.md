@@ -19,7 +19,7 @@ In addition to code clean up, I added or removed dependencies both in the front 
 
 ### Back end
 
-- [benjamincrozat/laravel-blade-sugar](https://packagist.org/packages/benjamincrozat/laravel-blade-sugar), too add handy new Blade directives;
+- [benjamincrozat/laravel-blade-sugar](https://packagist.org/packages/benjamincrozat/laravel-blade-sugar), to add handy new Blade directives;
 - [codedungeon/phpunit-result-printer](https://packagist.org/packages/codedungeon/phpunit-result-printer), for a prettier PHPUnit display in your console;
 - [laravel/dusk](https://packagist.org/packages/laravel/dusk), for easy browser testing;
 - [laravel/homestead](https://packagist.org/packages/laravel/homestead), if you don't want to use Valet or Docker;
