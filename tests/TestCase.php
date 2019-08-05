@@ -1,18 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+namespace Tests;
 
-abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication, RefreshDatabase;
-
-    /**
-     * This method is called before each test.
-     */
-    public function setUp() : void
-    {
-        parent::setUp();
-
-        cache()->flush();
-    }
 }

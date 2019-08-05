@@ -10,7 +10,7 @@ class BroadcastServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    function boot()
+    public function boot()
     {
         Broadcast::routes();
 

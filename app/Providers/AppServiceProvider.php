@@ -10,7 +10,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    function boot()
+    public function boot()
     {
         // https://laravel.com/docs/pagination#customizing-the-pagination-view
         Paginator::defaultSimpleView('pagination::simple-default');
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    function register()
+    public function register()
     {
         if (! $this->app->environment('production')) {
             $this->app->register(\Laravel\Dusk\DuskServiceProvider::class);

@@ -10,7 +10,7 @@ abstract class Resource extends NovaResource
     /**
      * Build an "index" query for the given resource.
      */
-    static function indexQuery(NovaRequest $request, $query)
+    public static function indexQuery(NovaRequest $request, $query)
     {
         return $query;
     }
@@ -23,7 +23,7 @@ abstract class Resource extends NovaResource
      *
      * @return \Laravel\Scout\Builder
      */
-    static function scoutQuery(NovaRequest $request, $query)
+    public static function scoutQuery(NovaRequest $request, $query)
     {
         return $query;
     }
@@ -31,7 +31,7 @@ abstract class Resource extends NovaResource
     /**
      * Build a "detail" query for the given resource.
      */
-    static function detailQuery(NovaRequest $request, $query)
+    public static function detailQuery(NovaRequest $request, $query)
     {
         return parent::detailQuery($request, $query);
     }
@@ -41,7 +41,7 @@ abstract class Resource extends NovaResource
      *
      * This query determines which instances of the model may be attached to other resources.
      */
-    static function relatableQuery(NovaRequest $request, $query)
+    public static function relatableQuery(NovaRequest $request, $query)
     {
         return parent::relatableQuery($request, $query);
     }

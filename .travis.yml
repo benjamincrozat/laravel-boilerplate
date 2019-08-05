@@ -4,12 +4,13 @@ php:
     - 7.3
 
 services:
+    - mysql
     - redis-server
 
 env:
     global:
-        - secure: "aKJQ4atIV/NaAm/3ON70tWgPdFOMzUVcj8mActFTHI9EP+6WRrxjVafmsjcPjGYDuwqIgHtNJgcyK8FzW9AgGnB07eh9QfIIYdO1GCpq3Aj3jBu+8uzhFrNHdLhQQlpSx+Jg5BeSxwWOD3d0m5zzAH/6f5p/akU+ujN8AunE41NSNwNaC4aYVOShI6nN0aHkS3HhGdZr8lDdSb25qtHkk8fUvPDfsLnmXHAIvkHfysc2e/00fA28my0tagKgdnq/VLOolp319wdX62de5L0DUJ6HD8RwCvbCaFZr/H4yVBYu5ahtFHnmmSnAvIQuPfNGsYb5gdnfNLl+s0Q/SgbcY9UR6vCmpJfBGqTPJcJzMwb834owfmV0YIBc4Uqzn1d7F0TOQpSiGL1TLN4LFCTNuZCV0+B+RB4rz2hMRZqp7iTseMzmVq16QJ47Ap5UvfKrLsGDBxZYYISwmKjKUVhEW1i+mpETtv/Pn0tH2e60nCxEU/3OrDbOsRE2WEtmbRE4c8CSHHPgU0zeAQvBtVeMs0wRe7TYxrO+E3MrA1z4TL7JxvZc0QbicyONvy005y2CFbw5huUinGt0gAM4Zcvq0acOAj8ENftVIv6JGU1GblZ+jaQ2KUw0VtiJeLvsLsDl46iWM5yoSsPavFqV0WZ1ahOYI5a8d6G0NcOOv9FRoUc="
-        - secure: "Ni15DNeTrMfAcC8lQXWwGZnP43XZXfVtzYqByXa4SLYzsOy7DawMzxwMAp10Hgo15SITyfQvhZMyqxqc8+Gv9rlaaMZj5zTYEh3hnMpYMyrCEkZigyPBvvKSvfwzHoyWnI6o97RvlBd5UACwtsdjFEwQF609mWINbTNcMxqOGM1Oeer6PDqypA5RE82LxTY1iacw6b4R69XXEF8L3UQm3S7jYXQ2KwXE07c/y/l7oKnKs9Gipif74saFpcCvEnLyWsLcbTzofuyKobBDN5XkBHPhCzmVMdZ/6nOv3xx9W9lCkHsztC8yQeaCka+10gqCDjhtdsdpISqqBm+zBriTX3tmdKAjE4gBiC4y4zRcr/jxFk2uOB9KFxjjZEB2DYc7XwDERENN0VeUhRmKa7tYzPb1j3v2mePuMgwFf9xOtXqsSn5z9Qr+sEVYuBo5tBsBnx3jigUc7AfDvYd7xi3tdtYHVRwvdfuOpjuqGGvEhxsBr3Iy+HPIbEaCxKceXFCKhNa54Id+AipKC1HS4FfpnjFLwIberWl7ZlKvitrW3x+tRHz8OrNuwRkhCEAjDVL9kRnUHWUORspdnOvNV+xbnNwwo2LN7IbTmt6w3JU9Ld2rgrHOReB9bOABsWCa8r0JOxWEuyIMc/sp/x1/xF0388qjKwkbeftlX57VRJqEmtA="
+        - secure: YRgUj6W569l5/RGHimVQiGpezMkrsuH9r0Z0DVkYH6ZNlNltnL9EH7vBbQ88OQS/c9arv2XOnzUXa9ziM6RFuOVi8DjZiswuUDCdCEdGurz3/ABmQ8ha4jeJgpYfOgPXqr11PPymB9LYdBMbjBGJpLdNeF/muOeatE1yM4wCAK54KxoL1M7WPvCnDEflu3RSSVNPN+ca2ZQqmyPdQs4ML39zPbHqvytgfXZprTzAkchc/b+hPT3orNN44O9iZRjBga8HPoUgmzQJ//SmmLDbSypC+I/79WuH7ldbJkcnct2HGir4ER04QNPKaKvYiOJH0hiTLegogzyI1nuu29Kc8KkthJQLPLXjmqn8IUKw4FoI6pTD6uWTAikK1c5elOgw5mDSuW2iq4bakIIo30Otom7nuqNte0EIlrt0/CjsggElKu/HSApCZvYRPXR8lY6GUNLLwjNhEnD89O9qKB5GVsy1vzoYDNFUevFyIbFzE7sk51YA1uGT/m1QoWne6CzBrSjlkElbxdtlHDZteItOuGCfSMtoYpwKBviqnIddpa75DeEMBjTIHZrkujsmlFS2EqCfLMx5Il8aw6ujMV9YGizlNuCwoGgTcCXb2k4ahhStSEGRUlgPqsiPjr6q8sHmpNK3TZV3ffsxuG3VLlQETxs7jtn6gNTPAxJuWhfys3E=
+        - secure: UQMOLF+ZBkq1+BzthNzQupyg0K4g3dtWJnrmYbLNX9la3NShOI6f6hHBbw3n+7xin4YgkxXhvW4DuyHjP+srBZdSU9TOgtn6TDzIwH3M8H/4PGpvyyO0dEC/ghW8L8qMHpdmW2pe3vIATIQDv4o0Tzk+55i0vA5o23kKxT+Ho9iyhTpNKxX4ic/bb/jHVdPzCynQleWDY5bdGAQC1c6FgNsqKIQzEUfVlazah0aPg0gQV6wgO3b0+TGYMMkT2HPON0sX8dEJuTxhjiVW70/oqTULF1aV/E5TSLg/EHVop8FuDC56KXAjRaJyUIds4YSNz+/UvmN02RTyTiWKQHvxq9zPUGMKroYijZI+kmKFWLJkeYFbA5NPX0BGDXkyA+fWH56chhQviRwE9TOW7bwQKlIg5ZMza3salG+Ylf2rDiYjwiFUhKNevTSCmAOgn3wxTJumDaUQviMV1J4163d/9mW2V8CVDw2Gwc0lMSvEgoU+RN1gg9XLL4OJiNUzWF/414J5LCt0Qel+snp/BPizXtfE4H0IIhgedYq+BQNLPBz3HOWtaB9Un+VHbyo+ztbZ9sZSV0qljBR8q8S2zhWtbnbhwkRxg+wd6o/wab5utCmHjYqAuYea/KctyX1YmFfeLKR3So9V7oszYeAfY9n4yB7H+ETSTOY5eqSA8Qu+4xI=
 
 matrix:
     fast_finish: true
@@ -21,12 +22,14 @@ cache:
 
 before_install:
     - nvm install node && npm install -g yarn
+    - mysql -e 'CREATE DATABASE laravel_boilerplate_test;'
 
 install:
-    - cp .env.example .env
+    - cp .env.travis .env
     - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
     - travis_retry composer self-update
-    - travis_retry composer install -n --no-suggest --prefer-dist
+    - travis_retry composer install -n --no-suggest
+    - travis_retry composer require predis/predis
     - php artisan key:generate
     - yarn
     - yarn dev

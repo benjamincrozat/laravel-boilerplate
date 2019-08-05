@@ -23,7 +23,7 @@ class ForgotPasswordController extends Controller
     /**
      * Create a new controller instance.
      */
-    function __construct()
+    public function __construct()
     {
         $this->middleware('guest');
     }

@@ -11,7 +11,7 @@ class EloquentServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    function boot()
+    public function boot()
     {
         // Custom Polymorphic Types: https://laravel.com/docs/5.6/eloquent-relationships#polymorphic-relations
         Relation::morphMap([

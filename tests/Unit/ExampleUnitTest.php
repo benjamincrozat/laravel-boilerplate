@@ -1,9 +1,15 @@
 <?php
 
+namespace Tests\Unit;
+
+use Tests\TestCase;
+
 class ExampleUnitTest extends TestCase
 {
-    /** @test */
-    function true_is_true()
+    /**
+     * A basic test example.
+     */
+    public function testBasicTest()
     {
         $this->assertTrue(true);
     }

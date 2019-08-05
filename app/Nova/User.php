@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
 
@@ -32,34 +33,38 @@ class User extends Resource
     /**
      * Get the fields displayed by the resource.
      */
-    function fields(Request $request)
+    public function fields(Request $request)
     {
         return [
             ID::make()->sortable(),
 
             Gravatar::make(),
 
-            Text::make('Name')
+            Text::make(__('Name'), 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
+            Text::make(__('Email'), 'email')
                 ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
+            Password::make(__('Password'), 'password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            DateTime::make(__('Email Verified At'), 'email_verified_at')
+                ->firstDayOfWeek(1)
+                ->nullable(),
         ];
     }
 
     /**
      * Get the cards available for the request.
      */
-    function cards(Request $request)
+    public function cards(Request $request)
     {
         return [];
     }
@@ -67,7 +72,7 @@ class User extends Resource
     /**
      * Get the filters available for the resource.
      */
-    function filters(Request $request)
+    public function filters(Request $request)
     {
         return [];
     }
@@ -75,7 +80,7 @@ class User extends Resource
     /**
      * Get the lenses available for the resource.
      */
-    function lenses(Request $request)
+    public function lenses(Request $request)
     {
         return [];
     }
@@ -83,7 +88,7 @@ class User extends Resource
     /**
      * Get the actions available for the resource.
      */
-    function actions(Request $request)
+    public function actions(Request $request)
     {
         return [];
     }

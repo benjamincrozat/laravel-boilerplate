@@ -26,7 +26,6 @@ In addition to code clean up, I added or removed dependencies both in the front 
 - [laravel/nova](https://packagist.org/packages/laravel/nova), to quickly set up a powerful and beautiful admin panel;
 - [laravel/telescope](https://packagist.org/packages/laravel/telescope), to help you debug and optimize your application;
 - [nothingworks/blade-svg](https://packagist.org/packages/nothingworks/blade-svg), to make it easy working with SVGs;
-- [predis/predis](https://packagist.org/packages/predis/predis), which is used by Laravel if the native extension isn't present;
 - [shipping-docker/vessel](https://packagist.org/packages/shipping-docker/vessel), if you don't want to use Valet or Vagrant.
 
 ### Front end
