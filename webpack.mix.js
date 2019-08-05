@@ -4,7 +4,7 @@ require('laravel-mix-purgecss')
 
 mix.options({
     processCssUrls: false,
-    postCss: [tailwindcss('./tailwind.js')],
+    postCss: [tailwindcss('./tailwind.config.js')],
 })
     .sass('resources/sass/app.sass', 'public/css')
     .js('resources/js/app.js', 'public/js')

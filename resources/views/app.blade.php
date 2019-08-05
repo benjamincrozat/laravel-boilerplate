@@ -9,12 +9,17 @@
             <meta name="robots" content="noindex, nofollow">
         @endif
 
-        @title($title)
+        <title>
+            @if (! empty($title))
+                {{ $title }} — @config('app.name')
+            @else
+                @config('app.name') — @config('app.description')
+            @endif
+        </title>
 
         <link rel="stylesheet" href="@mix('/css/app.css')">
-        <link rel="canonical" href="{{ URL::current() }}">
     </head>
-    <body class="bg-orange-lightest">
+    <body class="bg-orange-100">
         <div id="app">
             {{ $slot }}
         </div>
