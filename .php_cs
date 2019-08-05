@@ -18,5 +18,5 @@ return PhpCsFixer\Config::create()
         'not_operator_with_successor_space' => true,
         'ordered_imports'                   => ['sortAlgorithm' => 'length'],
         'return_type_declaration'           => ['space_before' => 'one'],
-        'visibility_required'               => false,
+        'single_trait_insert_per_statement' => false,
     ]);

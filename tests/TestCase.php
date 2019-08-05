@@ -9,7 +9,7 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
     /**
      * This method is called before each test.
      */
-    function setUp()
+    public function setUp() : void
     {
         parent::setUp();
 

@@ -9,5 +9,4 @@ mix.options({
     .sass('resources/sass/app.sass', 'public/css')
     .js('resources/js/app.js', 'public/js')
     .purgeCss()
-    .extract(['axios', 'vue'])
     .version()

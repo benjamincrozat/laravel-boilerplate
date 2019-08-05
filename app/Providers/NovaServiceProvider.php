@@ -12,7 +12,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     /**
      * Bootstrap any application services.
      */
-    function boot()
+    public function boot() : void
     {
         parent::boot();
     }
@@ -57,7 +57,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      *
      * @return array
      */
-    function tools()
+    public function tools()
     {
         return [];
     }
@@ -65,7 +65,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     /**
      * Register any application services.
      */
-    function register()
+    public function register() : void
     {
         //
     }
