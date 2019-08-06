@@ -1,0 +1,93 @@
+
+version: 2
+
+jobs:
+    build:
+        docker:
+            - image: circleci/php:7.3-stretch-node-browsers
+            - image: circleci/mysql:8.0-ram
+              command: [--default-authentication-plugin=mysql_native_password]
+              environment:
+                  MYSQL_DATABASE: laravel_boilerplate
+            - image: redis:3
+
+        steps:
+            - checkout
+
+            - run:
+                name: Install system dependencies
+                command: sudo apt update && sudo apt install -y libsodium-dev zlib1g-dev && sudo apt upgrade
+
+            - run:
+                name: Install needed PHP extensions
+                command: sudo docker-php-ext-install bcmath exif intl pdo_mysql pcntl sodium zip
+
+            - run:
+                name: Install PHP Redis extension
+                command: sudo pecl install -o -f redis && sudo docker-php-ext-enable redis
+
+            - run:
+                name: Create .env file
+                command: cp .env.circle .env
+
+            - restore_cache:
+                keys:
+                    - vendor-{{ checksum "composer.json" }}
+                    - vendor-
+
+            - run:
+                name: Install PHP dependencies
+                command: composer install -n --no-suggest
+
+            - save_cache:
+                key: vendor-{{ checksum "composer.lock" }}
+                paths:
+                    - vendor
+
+            - run:
+                name: Create and seed the database
+                command: php artisan migrate --seed
+
+            - run:
+                name: Install latest Chromedriver
+                command: php artisan dusk:chrome-driver
+
+            - restore_cache:
+                keys:
+                    - node_modules-{{ checksum "package.json" }}
+                    - node_modules-
+
+            - run:
+                name: Install JavaScript dependencies
+                command: npm install
+
+            - save_cache:
+                key: node_modules-{{ checksum "package.json" }}
+                paths:
+                    - node_modules
+
+            - run:
+                name: Compile assets for production
+                command: npm run prod
+
+            - run:
+                name: Generate application encryption key
+                command: php artisan key:generate
+
+            - run:
+                name: Run Integration Tests
+                command: php vendor/bin/phpunit
+
+            - run:
+                name: Start Chrome Driver
+                command: ./vendor/laravel/dusk/bin/chromedriver-linux
+                background: true
+
+            - run:
+                name: Run Laravel Server
+                command: php artisan serve
+                background: true
+
+            - run:
+                name: Run Laravel Dusk Tests
+                command: php artisan dusk
