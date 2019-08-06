@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/benjamincrozat/laravel-boilerplate.svg?branch=master)](https://travis-ci.org/benjamincrozat/laravel-boilerplate)
 [![Latest Stable Version](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/v/stable)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
 [![Total Downloads](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/downloads)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
 [![License](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/license)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
@@ -30,7 +29,7 @@ In addition to code clean up, I added or removed dependencies both in the front 
 
 ### Front end
 
-I removed the jQuery and Bootstrap stuff, kept [Vue.js](https://vuejs.org/) and [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). The [Mix configuration](/webpack.mix.js) can strip all unused styles when compiling for production, which dramatically reduce file size!
+I removed the jQuery and Bootstrap, kept [Vue.js](https://vuejs.org/) and [Axios](https://github.com/axios/axios) and added [Tailwind CSS](https://tailwindcss.com/). The [Mix configuration](/webpack.mix.js) can strip all unused styles when compiling for production, which dramatically reduce file size!
 
 ## Usage
 
