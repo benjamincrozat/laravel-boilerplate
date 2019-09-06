@@ -4,7 +4,7 @@
 
 # Laravel Boilerplate
 
-![](https://user-images.githubusercontent.com/3613731/64422023-553fc500-d0a3-11e9-8bcf-262ac08da526.png)
+![](https://user-images.githubusercontent.com/3613731/64422384-40affc80-d0a4-11e9-9c4d-fc2875d35b83.png)
 
 **Opinionated way** to start a new Laravel project.
 
