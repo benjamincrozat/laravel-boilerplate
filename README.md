@@ -4,7 +4,7 @@
 
 # Laravel Boilerplate
 
-![](https://user-images.githubusercontent.com/3613731/47615584-030c3b80-dab1-11e8-9912-929a3aee618f.png)
+![](https://user-images.githubusercontent.com/3613731/64422023-553fc500-d0a3-11e9-8bcf-262ac08da526.png)
 
 **Opinionated way** to start a new Laravel project.
 
@@ -24,7 +24,6 @@ In addition to code clean up, I added or removed dependencies both in the front 
 - [laravel/homestead](https://packagist.org/packages/laravel/homestead), if you don't want to use Valet or Docker;
 - [laravel/nova](https://packagist.org/packages/laravel/nova), to quickly set up a powerful and beautiful admin panel;
 - [laravel/telescope](https://packagist.org/packages/laravel/telescope), to help you debug and optimize your application;
-- [nothingworks/blade-svg](https://packagist.org/packages/nothingworks/blade-svg), to make it easy working with SVGs;
 - [shipping-docker/vessel](https://packagist.org/packages/shipping-docker/vessel), if you don't want to use Valet or Vagrant.
 
 ### Front end
