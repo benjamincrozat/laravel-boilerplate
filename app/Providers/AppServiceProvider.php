@@ -8,15 +8,6 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     */
-    public function boot()
-    {
-        // https://laravel.com/docs/pagination#customizing-the-pagination-view
-        Paginator::defaultSimpleView('pagination::simple-default');
-    }
-
-    /**
      * Register any application services.
      */
     public function register()
@@ -24,5 +15,14 @@ class AppServiceProvider extends ServiceProvider
         if (! $this->app->environment('production')) {
             $this->app->register(\Laravel\Dusk\DuskServiceProvider::class);
         }
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot()
+    {
+        // https://laravel.com/docs/pagination#customizing-the-pagination-view
+        Paginator::defaultSimpleView('pagination::simple-default');
     }
 }

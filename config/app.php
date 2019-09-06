@@ -16,19 +16,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Description
-    |--------------------------------------------------------------------------
-    |
-    | This value is the description of your application. It's is used
-    | when the framework needs to use the application's description
-    | in a meta tag or anything else where it could be useful.
-    |
-    */
-
-    'description' => '',
-
-    /*
-    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |

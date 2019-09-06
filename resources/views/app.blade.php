@@ -13,7 +13,7 @@
             @if (! empty($title))
                 {{ $title }} — @config('app.name')
             @else
-                @config('app.name') — @config('app.description')
+                @config('app.name')
             @endif
         </title>
 

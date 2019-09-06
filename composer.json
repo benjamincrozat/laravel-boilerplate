@@ -14,17 +14,16 @@
         "php": "^7.3",
         "benjamincrozat/laravel-blade-sugar": "^4.0",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "^6.0",
         "laravel/horizon": "^3.0",
         "laravel/nova": "^2.0",
         "laravel/telescope": "^2.0",
-        "laravel/tinker": "^1.0",
-        "nothingworks/blade-svg": "0.*|^1.0"
+        "laravel/tinker": "^1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
-        "codedungeon/phpunit-result-printer": "0.*|^1.0",
-        "filp/whoops": "^2.0",
+        "codedungeon/phpunit-result-printer": "0.*",
+        "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/dusk": "^5.0",
         "laravel/homestead": "^9.0",
@@ -63,7 +62,7 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover",
+            "@php artisan package:discover --ansi",
             "@php artisan horizon:assets",
             "@php artisan nova:publish",
             "@php artisan telescope:install"
