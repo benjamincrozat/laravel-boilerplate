@@ -42,8 +42,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the cards that should be displayed on the default Nova dashboard.
-     *
-     * @return array
      */
     protected function cards()
     {
@@ -54,8 +52,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the extra dashboards that should be displayed on the Nova dashboard.
-     *
-     * @return array
      */
     protected function dashboards()
     {
@@ -64,19 +60,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the tools that should be listed in the Nova sidebar.
-     *
-     * @return array
      */
     public function tools()
     {
         return [];
-    }
-
-    /**
-     * Register any application services.
-     */
-    public function register()
-    {
-        //
     }
 }
