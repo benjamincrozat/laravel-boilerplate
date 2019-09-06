@@ -12,10 +12,6 @@
 
 I just got tired of repeating the same things over and over. I made this repository public, because why not?
 
-## What's included
-
-In addition to code clean up, I added or removed dependencies both in the front and the back end.
-
 ## Usage
 
 ```bash
