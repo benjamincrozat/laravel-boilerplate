@@ -14,10 +14,11 @@
         "php": "^7.3",
         "benjamincrozat/laravel-blade-sugar": "^4.0",
         "fideloper/proxy": "^4.0",
+        "laravel/dusk": "^5.5",
         "laravel/framework": "^6.0",
-        "laravel/horizon": "^3.0",
+        "laravel/horizon": "^3.4",
         "laravel/nova": "^2.0",
-        "laravel/telescope": "^2.0",
+        "laravel/telescope": "^2.1",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
@@ -25,7 +26,6 @@
         "codedungeon/phpunit-result-printer": "0.*",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
-        "laravel/dusk": "^5.0",
         "laravel/homestead": "^9.0",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
@@ -46,13 +46,6 @@
             "Tests\\": "tests"
         }
     },
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-                "laravel/dusk"
-            ]
-        }
-    },
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -63,9 +56,9 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "@php artisan horizon:assets",
             "@php artisan nova:publish",
-            "@php artisan telescope:install"
+            "php artisan horizon:assets",
+            "php artisan telescope:publish"
         ]
     },
     "minimum-stability": "dev",
