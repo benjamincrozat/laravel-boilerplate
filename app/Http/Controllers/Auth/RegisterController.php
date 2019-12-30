@@ -26,7 +26,7 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -52,8 +52,6 @@ class RegisterController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     *
-     * @param array $data
      *
      * @return \App\User
      */

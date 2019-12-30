@@ -23,7 +23,7 @@ class VerificationController extends Controller
     /**
      * Where to redirect users after verification.
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
