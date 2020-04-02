@@ -17,16 +17,28 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * The path to the "home" route for your application.
      */
-    public const HOME = '/home';
+    public const HOME = '/';
+
+    /**
+     * Define your route model bindings, pattern filters, etc.
+     */
+    public function boot() : void
+    {
+        //
+
+        parent::boot();
+    }
 
     /**
      * Define the routes for the application.
      */
-    public function map()
+    public function map() : void
     {
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        //
     }
 
     /**
@@ -34,11 +46,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes all receive session state, CSRF protection, etc.
      */
-    protected function mapWebRoutes()
+    protected function mapWebRoutes() : void
     {
         Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
     }
 
     /**
@@ -46,11 +58,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes are typically stateless.
      */
-    protected function mapApiRoutes()
+    protected function mapApiRoutes() : void
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 }

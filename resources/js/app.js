@@ -1,6 +1,5 @@
-require('./bootstrap')
 
-window.Vue = require('vue')
+import Vue from 'vue'
 
 new Vue({
     el: '#app'

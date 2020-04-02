@@ -3,10 +3,16 @@ const tailwindcss = require('tailwindcss')
 require('laravel-mix-purgecss')
 
 mix.options({
-    processCssUrls: false,
-    postCss: [tailwindcss('./tailwind.config.js')],
-})
-    .sass('resources/sass/app.sass', 'public/css')
-    .js('resources/js/app.js', 'public/js')
-    .purgeCss()
-    .version()
+       postCss: [
+           tailwindcss('tailwind.config.js'),
+       ],
+       processCssUrls: false,
+   })
+   .sass('resources/sass/app.sass', 'public/css')
+   .js('resources/js/app.js', 'public/js')
+   .purgeCss({
+        whitelistPatterns: [
+            //
+        ],
+    })
+   .version()

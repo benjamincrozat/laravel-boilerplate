@@ -4,25 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class CreateFailedJobsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up()
+    public function up() : void
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::create('failed_jobs', function (Blueprint $table) {
+            $table->id();
+            $table->text('connection');
+            $table->text('queue');
+            $table->longText('payload');
+            $table->longText('exception');
+            $table->timestamp('failed_at')->useCurrent();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down()
-    {
-        Schema::dropIfExists('password_resets');
     }
 }

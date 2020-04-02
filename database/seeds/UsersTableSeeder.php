@@ -5,14 +5,12 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run()
+    public function run() : void
     {
         factory(User::class)->create([
-            'name'  => 'John Doe',
-            'email' => 'john@doe.com',
+            'name'              => 'John Doe',
+            'email'             => 'john@doe.com',
+            'email_verified_at' => now(),
         ]);
     }
 }

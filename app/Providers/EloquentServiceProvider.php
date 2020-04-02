@@ -13,7 +13,8 @@ class EloquentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Custom Polymorphic Types: https://laravel.com/docs/5.6/eloquent-relationships#polymorphic-relations
+        // Custom polymorphic types, useful if models' namespace changes:
+        // https://laravel.com/docs/eloquent-relationships#polymorphic-relations
         Relation::morphMap([
             User::class,
         ]);

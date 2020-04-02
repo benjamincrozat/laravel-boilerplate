@@ -24,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // https://laravel.com/docs/pagination#customizing-the-pagination-view
         Paginator::defaultSimpleView('pagination::simple-default');
+        Paginator::defaultView('pagination::default');
     }
 }

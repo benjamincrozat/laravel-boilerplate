@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use Exception;
+use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -21,4 +21,28 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    /**
+     * Report or log an exception.
+     *
+     * @throws \Exception
+     */
+    public function report(Throwable $exception)
+    {
+        parent::report($exception);
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Throwable
+     */
+    public function render($request, Throwable $exception)
+    {
+        return parent::render($request, $exception);
+    }
 }
