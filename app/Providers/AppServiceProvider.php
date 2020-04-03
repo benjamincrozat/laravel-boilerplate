@@ -7,9 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register()
     {
         if (! $this->app->environment('production')) {
@@ -17,9 +14,6 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot()
     {
         // https://laravel.com/docs/pagination#customizing-the-pagination-view

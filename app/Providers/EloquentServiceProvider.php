@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 
 class EloquentServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     */
     public function boot()
     {
         // Custom polymorphic types, useful if models' namespace changes:
