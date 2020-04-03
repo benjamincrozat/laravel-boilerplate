@@ -1,7 +1,18 @@
 module.exports = {
     theme: {
-        extend: {},
+        container: {
+            center: true,
+            padding: '1rem',
+        },
+
+        extend: {
+            screens: {
+                dark: { raw: '(prefers-color-scheme: dark)' },
+            },
+        },
     },
+
     variants: {},
+
     plugins: [],
 }
