@@ -13,12 +13,9 @@ jobs:
               uses: actions/checkout@v2
 
             - name: Cache PHP dependencies
-              id: composer-cache
-              run: |
-                echo "::set-output name=dir::$(composer config cache-files-dir)"
               uses: actions/cache@v1
               with:
-                path: ${{ steps.composer-cache.outputs.dir }}
+                path: ~/.composer/cache/files
                 key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                 restore-keys: |
                   ${{ runner.os }}-composer-
