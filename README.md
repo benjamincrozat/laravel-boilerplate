@@ -1,3 +1,4 @@
+![.github/workflows/run-tests.yml](https://github.com/benjamincrozat/laravel-boilerplate/workflows/.github/workflows/run-tests.yml/badge.svg)
 [![Latest Stable Version](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/v/stable)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
 [![Total Downloads](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/downloads)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
 [![License](https://poser.pugx.org/benjamincrozat/laravel-boilerplate/license)](https://packagist.org/packages/benjamincrozat/laravel-boilerplate)
