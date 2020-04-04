@@ -12,11 +12,24 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
-            - name: Cache dependencies
+            - name: Cache PHP dependencies
+              id: composer-cache
+              run: |
+                echo "::set-output name=dir::$(composer config cache-files-dir)"
               uses: actions/cache@v1
               with:
-                  path: ~/.composer/cache/files
-                  key: composer-${{ hashFiles('composer.json') }}
+                path: ${{ steps.composer-cache.outputs.dir }}
+                key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                restore-keys: |
+                  ${{ runner.os }}-composer-
+
+            - name: Cache JS dependencies
+              uses: actions/cache@v1
+              with:
+                path: ~/.npm
+                key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                restore-keys: |
+                  ${{ runner.os }}-node-
 
             - name: Install PHP
               uses: shivammathur/setup-php@v2
@@ -27,10 +40,15 @@ jobs:
             - name: Install Redis
               uses: zhulik/redis-action@1.1.0
 
-            - name: Install dependencies
+            - name: Install PHP dependencies
               run: |
                 composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
                 composer install --no-ansi --no-interaction --no-progress --no-suggest --prefer-dist
+
+            - name: Install JS dependencies
+              run: |
+                   yarn
+                   yarn dev
 
             - name: Setup project
               run: |
