@@ -1,0 +1,88 @@
+name: Test and deploy
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          tools: composer:v2
+
+      - name: Setup databases
+        run: mysql -u root -h 127.0.0.1 -P ${{ job.services.mysql.ports[3306] }} -e "CREATE DATABASE laravel; CREATE DATABASE laravel_test"
+
+      - name: Install PHP dependencies
+        run: composer install --no-ansi --no-interaction --no-progress --no-suggest --prefer-dist
+
+      - name: Install JS dependencies
+        run: |
+          yarn
+          yarn dev
+
+      - name: Setup project
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          php artisan migrate --force
+        env:
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+
+      - name: Run Feature and Unit Tests
+        run: vendor/bin/phpunit
+        env:
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+
+      - name: Upgrade Chrome Driver
+        run: php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
+
+      - name: Start Chrome Driver
+        run: vendor/laravel/dusk/bin/chromedriver-linux --whitelisted-ips &
+
+      - name: Serve
+        run: php artisan serve &
+        env:
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+
+      - name: Run Dusk Tests
+        run: php artisan dusk
+        env:
+          APP_URL: http://127.0.0.1:8000
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+
+      # - name: Deploy
+      #   if: success() && github.ref == 'refs/heads/master'
+      #   run: curl -sS ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
+
+      - name: Add screenshots to the artifact if failed
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          path: tests/Browser/screenshots
+
+      - name: Add log to the artifact if failed
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          path: storage/logs

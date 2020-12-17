@@ -1,0 +1,16 @@
+*.log
+.DS_Store
+.env
+.php_cs.cache
+.phpunit.result.cache
+/node_modules
+/public/css
+/public/hot
+/public/js
+/public/mix-manifest.json
+/public/storage
+/public/vendor
+/storage/*.key
+/vendor
+auth.json
+phpunit.xml
