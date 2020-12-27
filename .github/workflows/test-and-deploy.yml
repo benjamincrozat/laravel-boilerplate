@@ -54,23 +54,6 @@ jobs:
         env:
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
 
-      - name: Upgrade Chrome Driver
-        run: php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
-
-      - name: Start Chrome Driver
-        run: vendor/laravel/dusk/bin/chromedriver-linux --whitelisted-ips &
-
-      - name: Serve
-        run: php artisan serve &
-        env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
-
-      - name: Run Dusk Tests
-        run: php artisan dusk
-        env:
-          APP_URL: http://127.0.0.1:8000
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
-
       # - name: Deploy
       #   if: success() && github.ref == 'refs/heads/master'
       #   run: curl -sS ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
