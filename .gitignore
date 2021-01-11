@@ -1,8 +1,8 @@
-*.log
 .DS_Store
 .env
 .php_cs.cache
 .phpunit.result.cache
+*.log
 /node_modules
 /public/css
 /public/hot
@@ -13,4 +13,5 @@
 /storage/*.key
 /vendor
 auth.json
+docker-compose.override.yml
 phpunit.xml
