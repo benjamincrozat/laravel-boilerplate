@@ -1,9 +1,4 @@
 {
-    "name": "benjamincrozat/laravel-boilerplate",
-    "type": "project",
-    "description": "This is how I start new Laravel projects.",
-    "keywords": ["framework", "laravel"],
-    "license": "WTFPL",
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
