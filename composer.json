@@ -1,4 +1,6 @@
 {
+    "name": "benjamincrozat/laravel-boilerplate",
+    "description": "This is how I start new Laravel projects.",
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
